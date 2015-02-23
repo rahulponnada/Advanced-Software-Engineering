@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retrieve stock data using YQL - jsFiddle demo</title>
+  
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.5.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <script type='text/javascript' src="http://underscorejs.org/underscore-min.js"></script>
+    
+  
+  <style type='text/css'>
+    
+  </style>
+  
+
+
+<script type='text/javascript'>
+$(function(){
+var query = "select * from yahoo.finance.quotes where symbol = 'GOOG'";
+
+var yql = "http://query.yahooapis.com/v1/public/yql?q=" + escape(query) + "&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=?";
+
+$.ajax({
+    url: yql,
+    dataType: 'json',
+    success: function(data) {
+        var results = "";
+        var keys = _.keys(data.query.results.quote);
+        //var values = _.values(data.query.results.quote);
+                
+           
+        for (i=0;i<keys.length;i++) {
+            results += "<div>" + keys[i] + ": " + data.query.results.quote[keys[i]] + "</div>";
+        }
+        
+        
+        $("#info").html(results);        
+    }
+});
+
+}); 
+
+</script>
+
+
+</head>
+<body>
+<h2>Google Stock details(GOOG)</h2>
+<div id="info"></div>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by rpqt7</title>
+  
+  <script type='text/javascript' src='//code.jquery.com/jquery-2.1.0.js'></script>
+  
+  
+  
+  
+  <script type="text/javascript" src="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+    
+      <script type='text/javascript' src="http://underscorejs.org/underscore-min.js"></script>
+    
+  
+  <style type='text/css'>
+    input.ui-input-text-placeholder, textarea.ui-input-text-placeholder {
+    width: 98% !important;
+}
+  </style>
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(function(){
+$("#submit").click(function () {
+    var usrname = document.getElementById("username").value
+    localStorage.setItem("username", usrname);
+    document.getElementById("result").innerHTML = localStorage.getItem("username");
+});
+
+$(document).ready(function () {
+    $("#tweet").click(function () {
+        var stockid = document.getElementById("stockid").value
+        var query = "select * from yahoo.finance.quotes where symbol = '"+stockid+"'";
+        var yql = "http://query.yahooapis.com/v1/public/yql?q=" + escape(query) + "&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=?";
+
+var results;
+var stockd = " ";
+$.ajax({
+    url: yql,
+    dataType: 'json',
+    success: function(data) {
+        results = "";
+        var keys = _.keys(data.query.results.quote);
+        for (i=0;i<keys.length;i++) {
+            results += "<div>" + keys[i] + ": " + data.query.results.quote[keys[i]] + "</div>";
+        }
+        stockd = data.query.results.quote[keys[1]];   
+        $("#info").html(results);    
+        alert(stockd);
+        document.getElementById("link").href = "https://twitter.com/intent/tweet?text=Wohooo The current Stock Value of "+stockid+" is "+stockd+"&source=webclient"
+    }
+});
+   
+        
+   /*  $.get("http://finance.yahoo.com/webservice/v1/symbols/CNY/quote?format=json&view=basic&callback", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+        /*    YAHOO.Finance.SymbolSuggest.ssCallback = function (data) {
+            alert(JSON.stringify(data));
+        };
+        var query;
+        query = 'Google';
+        if (query.length > 0) {
+
+            $.ajax({
+                type: "GET",
+                url: "http://d.yimg.com/autoc.finance.yahoo.com/autoc",
+                data: {
+                    query: query
+                },
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback: "YAHOO.Finance.SymbolSuggest.ssCallback",
+            });
+        }
+        $.ajax({
+        url: 'http://finance.yahoo.com/webservice/v1/symbols/CNY/quote?',
+        data: {
+            format: 'xml'
+        },
+        dataType: 'jsonp',
+        success: function (data) {
+            alert(data)
+            alert("in success");
+            xmlDoc = $.parseXML( data ),
+            $xml = $( xmlDoc ),
+            $title = $xml.find( "title" );
+        },
+        
+    });*/
+    });
+});
+});//]]>  
+
+</script>
+
+
+</head>
+<body>
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<div class="container" id="page1">
+    <div data-role="header">
+         <h1>Mashup</h1>
+
+    </div>
+    <div data-role="content">
+        <p>Username:
+            <input id="username" data-bind='value: username' />
+        </p>
+        <p>Password:
+            <input type="password" data-bind='value: password' />
+        </p>
+        <p><a id="submit" href="#ButtonEventPage" class="btn btn-default">login</a>
+        </p>
+    </div>
+</div>
+<div data-role="page" id="ButtonEventPage">
+    <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+
+         <h1> Welcome to the world of mashup </h1>
+
+    </div>
+    <div data-role="content">
+        <p id="melcow">Welcome <span id="result"></span>
+
+        </p>
+        <p id="conversion">Currency code</p>
+        <input id="stockid" />
+        <button id="tweet">Tweet</button>
+        <div id="info"></div>
+        <p><a id="link" href="#">Tweet share</a></p>
+        
+    </div>
+    
+    
+</div>
+  
+</body>
+
+
+</html>
+

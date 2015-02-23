@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Lab3 GoogleMapsWeatherAPI - jsFiddle demo by rpqt7</title>
+  <script type='text/javascript' src='//code.jquery.com/jquery-2.1.0.js'></script>
+  <script type="text/javascript" src="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+  <style type='text/css'>
+    #map {
+    width: 400px;
+    height: 400px;
+	}
+  </style>
+  
+
+<script type='text/javascript'> 
+
+ var map2;
+var start;
+var end;
+function directions(){
+		alert("Direction");
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+        var center = new google.maps.LatLng(0, 0); 
+        
+        var myOptions = {
+            zoom: 6,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: center
+        };
+         start = document.getElementById("saddr").value;
+         end = document.getElementById("daddr").value;
+        map2 = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+        directionsDisplay.setMap(map2);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+            
+        });
+       $.ajax({   
+	   url: 'http://api.wunderground.com/api/36b799dc821d5836/conditions/q/MO/wichita.json',
+   	   data: {
+       format: 'json'
+       },
+   dataType: 'jsonp',
+   success: function(data) {
+      var temp = data.current_observation.temp_f;
+      var weather = data.current_observation.weather;
+      var icon = data.current_observation.icon_url;
+       //var $title = $('<p>').text(data.current_observation.temp_f);
+       //var $weather = $('<p>').text(data.current_observation.weather);
+       $('#temp1').append('Currently '+temp+' &deg; F and '+weather);
+       $('#temp1').append('<img src='+icon+'></img>');
+       alert(temp);
+       alert(weather);
+   },
+   type: 'POST'
+   });    
+    
+  $.ajax({
+  url: 'http://api.wunderground.com/api/36b799dc821d5836/conditions/q/chicago.json',
+   data: {
+      format: 'json'
+   },
+   dataType: 'jsonp',
+   success: function(data) {
+       var temp = data.current_observation.temp_f;
+       var weather = data.current_observation.weather;
+       var icon = data.current_observation.icon_url;
+       $('#temp2').append('Currently '+temp+' &deg; F and '+weather);
+       $('#temp2').append('<img src='+icon+'></img>');
+
+   },
+   type: 'POST'
+   });
+    
+    var geocoder = new google.maps.Geocoder();
+    var address = document.getElementById("saddr").value;
+    var address2 = document.getElementById("daddr").value;
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+            slat = results[0].geometry.location.lat();
+            slong = results[0].geometry.location.lng();
+        var pos = new google.maps.LatLng(slat,slong);
+        starting(pos);
+    });
+    geocoder.geocode({
+        'address': address2
+    }, function (results, status) {
+             var dlat = results[0].geometry.location.lat();
+            var dlong = results[0].geometry.location.lng();
+        var pos2 = new google.maps.LatLng(dlat,dlong);
+        ending(pos2);
+    });       
+}
+
+function starting(pos){
+    alert("Kcc");
+       var infowindow = new google.maps.InfoWindow({
+                   
+                    map: map2,
+                    position: pos,
+                    content: '<div id="temp1"></div>'
+                });
+}
+function ending(pos2){
+    var infowindow = new google.maps.InfoWindow({
+                    map: map2,
+                    position: pos2,
+                    content: '<div id="temp2"></div>'
+                });
+}  
+
+</script>
+
+
+</head>
+<body>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+
+<div data-role="content">
+    <p>I am starting here:
+        <input id="saddr" />
+        <!--//data-bind='value: saddr' />--></p>
+    <p>I wanna go there:
+        <input id="daddr" />
+        <!--//data-bind='value: daddr' />--></p>
+    <button id="button" onclick="directions();">Direction</button>
+    <div id="map_canvas" style="height: 400px; width: 400px"></div>
+    <p id="saddrweather"></p>
+    <p id="daddrweather"></p>
+</div>
+ 
+</body>
+</html>
+
