@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\Anvesh\Documents\Visual Studio 2010\Projects\TestWS\TestWS\bin\Debug\TestWS.dll" total="10" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-04-13" time="20:10:31">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8645" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="WIN-5GNTJGGVT14" user="Anvesh" user-domain="WIN-5GNTJGGVT14" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\Anvesh\Documents\Visual Studio 2010\Projects\TestWS\TestWS\bin\Debug\TestWS.dll" executed="True" result="Success" success="True" time="12.604" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="TestWS" executed="True" result="Success" success="True" time="12.588" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="Service" executed="True" result="Success" success="True" time="12.586" asserts="0">
+            <results>
+              <test-case name="TestWS.Service.testassignVolunteer" executed="True" result="Success" success="True" time="7.151" asserts="1" />
+              <test-case name="TestWS.Service.testgetStudentDetails" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+              <test-case name="TestWS.Service.testgetStudentVolunteerDetails" executed="True" result="Success" success="True" time="0.019" asserts="1" />
+              <test-case name="TestWS.Service.testgetVolunteerDetailsFailCase" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+              <test-case name="TestWS.Service.testLoginAdmin" executed="True" result="Success" success="True" time="0.007" asserts="1" />
+              <test-case name="TestWS.Service.testLoginStudent" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+              <test-case name="TestWS.Service.testLoginVolunteer" executed="True" result="Success" success="True" time="0.006" asserts="1" />
+              <test-case name="TestWS.Service.testRegistrationAdminFailCase" executed="True" result="Success" success="True" time="0.008" asserts="1" />
+              <test-case name="TestWS.Service.testRegistrationStudent" executed="True" result="Success" success="True" time="5.254" asserts="1" />
+              <test-case name="TestWS.Service.testRegistrationVolunteer" executed="True" result="Success" success="True" time="0.064" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
