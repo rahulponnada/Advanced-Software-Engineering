@@ -1,0 +1,6 @@
+$("#search").click(function(){
+	window.location.href = "http://localhost:8080/yotube/page";
+	var milliSeconds = 100000;
+	var startTime = new Date().getTime(); // get the current time
+	while (new Date().getTime() < startTime + milliSeconds);
+});

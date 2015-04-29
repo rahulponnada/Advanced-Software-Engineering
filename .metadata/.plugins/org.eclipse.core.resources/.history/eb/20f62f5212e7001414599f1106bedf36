@@ -1,0 +1,58 @@
+package com.ibm.cloudoe.samples;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
+
+public class SearchResults extends HttpServlet {
+	
+	public void doPost(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		doGet(req,res);
+	}
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	{
+		// Set the response message's MIME type
+	    /*
+	    response.setContentType("text/html;charset=UTF-8");
+	    //HttpSession session = request.getSession();
+	    if(request.getParameter("userid").equals("1234")){
+	    	request.setAttribute("user","xyz");
+	    }else{
+	    request.setAttribute("user","rahul");
+	    }
+	    request.setAttribute("query", request.getParameter("query"));
+	    //session.setMaxInactiveInterval(30*60);
+        //Cookie userName = new Cookie("user", "rahul");
+        // userName.setMaxAge(30*60);
+        // response.addCookie(userName);
+	    RequestDispatcher rd = getServletContext().getRequestDispatcher("/home.jsp");
+	    System.out.println("Hi! World!");
+		System.out.println(request.getParameter("userid"));
+		System.out.println(request.getAttribute("user"));
+	    //System.out.println(rd.toString());*/
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/homepage.jsp");
+	    rd.forward(request, response);
+	    
+		//response.sendRedirect("/yotub/home.jsp");
+	}
+	/*public String getInformation() {
+
+		// 'VCAP_APPLICATION' is in JSON format, it contains useful information about a deployed application
+		// String envApp = System.getenv("VCAP_APPLICATION");
+
+		// 'VCAP_SERVICES' contains all the credentials of services bound to this application.
+		// String envServices = System.getenv("VCAP_SERVICES");
+		// JSONObject sysEnv = new JSONObject(System.getenv());
+		
+		return "Hi World!";
+
+	}*/
+}

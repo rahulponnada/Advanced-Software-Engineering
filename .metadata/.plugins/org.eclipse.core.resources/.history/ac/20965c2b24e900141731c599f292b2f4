@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+
+<head>
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>YoTub | Redefining YouTube</title>   
+
+<meta name="description" content="Insert Your Site Description" /> 
+
+<!-- Mobile Specifics -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="MobileOptimized" content="320"/>   
+
+<!-- Mobile Internet Explorer ClearType Technology -->
+<!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
+
+<!-- Bootstrap -->
+<link href="_include/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Main Style -->
+<link href="_include/css/main.css" rel="stylesheet">
+
+<!-- Supersized -->
+<link href="_include/css/supersized.css" rel="stylesheet">
+<link href="_include/css/supersized.shutter.css" rel="stylesheet">
+
+<!-- FancyBox -->
+<link href="_include/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+<!-- Font Icons -->
+<link href="_include/css/fonts.css" rel="stylesheet">
+
+<!-- Shortcodes -->
+<link href="_include/css/shortcodes.css" rel="stylesheet">
+
+<!-- Responsive -->
+<link href="_include/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="_include/css/responsive.css" rel="stylesheet">
+
+<!-- Supersized -->
+<link href="_include/css/supersized.css" rel="stylesheet">
+<link href="_include/css/supersized.shutter.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+<!-- Fav Icon -->
+<link rel="shortcut icon" href="#">
+
+<link rel="apple-touch-icon" href="#">
+<link rel="apple-touch-icon" sizes="114x114" href="#">
+<link rel="apple-touch-icon" sizes="72x72" href="#">
+<link rel="apple-touch-icon" sizes="144x144" href="#">
+
+<!-- Modernizr -->
+<script src="_include/js/modernizr.js"></script>
+
+<!-- Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'Insert Your Code']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();     
+</script>
+<!-- End Analytics -->
+<style>
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    border-radius: 10px;
+background-color:#D0D0D0 ;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+background-color:#FF6666;
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- This section is for Splash Screen -->
+
+<!-- End of Splash Screen -->
+
+<!-- Homepage Slider -->
+
+<!-- End Homepage Slider -->
+
+<!-- Header -->
+<header>
+    <div class="sticky-nav">
+    	<a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        
+        <div id="logo">
+
+    	</div>
+        <nav id="menu">
+        	<ul id="menu-nav">
+            	<li class="current"><a href="#" onClick="window.location='/yotube/homepage.jsp">Home</a></li>
+            	<li><input type="text" id="search" style="height:25px;width:460px"></input>
+        		<button onClick="searching()" type="button" class="btn btn-danger" style="height:36px; width:100px; text-align:center; padding: 5px 5px 5px 5px; margin-bottom: 8.5px">Ranking</button></li>
+        		<li><a href="#" onClick="window.location='/yotube/recent'">Frequent Users</a></li>
+        		<li><a href="#" onClick="window.location='/yotube/frequent'">Frequent Searches</a></li>
+                <li><a href="#" onClick="window.location='Login.jsp'">Logout</a></li>
+            </ul>
+        </nav>
+        
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- Our Work Section -->
+<div id="work" class="page">
+	<div class="container">
+    	<!-- Title Page -->
+     	  <div class="span12" style="height:80px">
+                <div class="title-page">
+                    <h5 class="title">YoTub</h5>
+                    <h6 class="title-description">A new way to search YouTube.</h6>
+                </div>
+            </div>
+        
+        <!-- End Title Page -->
+        
+        <!-- Portfolio Projects -->
+		
+        <div class="row">
+        	<div class="span3">
+            	<!-- Filter -->
+                <nav id="options" class="work-nav">
+                <ul class="type-work">Categories</ul>
+                <ul id="filters" class="option-set" data-option-key="filter" style="width: 250px; height: 700px; overflow: auto; border:2px">
+                    <!-- <ul id="filters" class="option-set" data-option-key="filter"> -->
+                        <li><a href="#filter" data-option-value="*" class="selected">All results</a></li>       	
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(0) }')">${topics.get(0) }</a>${topicCategory.get(0) }</li>
+                        <li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(1) }')">${topics.get(1) }</a>${topicCategory.get(1) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(2) }')">${topics.get(2) }</a>${topicCategory.get(2) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(3) }')">${topics.get(3) }</a>${topicCategory.get(3) }</li>
+						<li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(4) }')">${topics.get(4) }</a>${topicCategory.get(4) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(5) }')">${topics.get(5) }</a>${topicCategory.get(5) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(6) }')">${topics.get(6) }</a>${topicCategory.get(6) }</li>
+                     	<li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(7) }')">${topics.get(7) }</a>${topicCategory.get(7) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(8) }')">${topics.get(8) }</a>${topicCategory.get(8) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(9) }')">${topics.get(9) }</a>${topicCategory.get(9) }</li>
+                        <li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(10) }')">${topics.get(10) }</a>${topicCategory.get(10) }</li>
+                        <li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(11) }')">${topics.get(11) }</a>${topicCategory.get(11) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(12) }')">${topics.get(12) }</a>${topicCategory.get(12) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(13) }')">${topics.get(13) }</a>${topicCategory.get(13) }</li>
+						<li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(14) }')">${topics.get(14) }</a>${topicCategory.get(14) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(15) }')">${topics.get(15) }</a>${topicCategory.get(15) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(16) }')">${topics.get(16) }</a>${topicCategory.get(16) }</li>
+                        <li><a href="#filter" data-option-value=".photography" onClick="Search('${topics.get(17) }')">${topics.get(17) }</a>${topicCategory.get(17) }</li>
+                        <li><a href="#filter" data-option-value=".video" onClick="Search('${topics.get(18) }')">${topics.get(18) }</a>${topicCategory.get(18) }</li>
+                        <li><a href="#filter" data-option-value=".design" onClick="Search('${topics.get(19) }')">${topics.get(19) }</a>${topicCategory.get(19) }</li>
+                </ul>
+                </nav>
+                <!-- End Filter -->
+            </div>
+            
+            <div class="span9">
+            <h3> Search results for "<span style="font-style: italic; color:red;">${query}</span>"</h3>
+            	<div class="row">
+                	<section id="projects">
+                    	<ul id="thumbs">
+                        				
+                        	<!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo0.getTitle()}" href="${videoInfo0.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo0.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo0.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo0.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo0.getViewCount()}</li>
+                                <li>Likes - ${videoInfo0.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo0.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo0.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo0.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                        	<li class="item-thumbs span3">
+                            	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                            	<a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo1.getTitle()}" href="${videoInfo1.getUrl()}">
+                            	<span class="overlay-img" style="text-align:center;color:black">
+                            	<ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo1.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo1.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo1.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo1.getViewCount()}</li>
+                                <li>Likes - ${videoInfo1.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo1.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo1.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo1.getThumbnail()}" alt="">
+                            </li>
+                        	<!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo2.getTitle()}" href="${videoInfo2.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo2.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo2.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo2.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo2.getViewCount()}</li>
+                                <li>Likes - ${videoInfo2.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo2.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo2.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo2.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo3.getTitle()}" href="${videoInfo3.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo3.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo3.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo3.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo3.getViewCount()}</li>
+                                <li>Likes - ${videoInfo3.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo3.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo3.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo3.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo4.getTitle()}" href="${videoInfo4.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo4.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo4.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo4.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo4.getViewCount()}</li>
+                                <li>Likes - ${videoInfo4.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo4.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo4.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo4.getThumbnail()}" alt="">
+                            </li>
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo5.getTitle()}" href="${videoInfo5.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo5.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo5.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo5.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo5.getViewCount()}</li>
+                                <li>Likes - ${videoInfo5.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo5.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo5.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo5.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo6.getTitle()}" href="${videoInfo6.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo6.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo6.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo6.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo6.getViewCount()}</li>
+                                <li>Likes - ${videoInfo6.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo6.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo6.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo6.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo7.getTitle()}" href="${videoInfo7.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo7.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo7.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo7.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo7.getViewCount()}</li>
+                                <li>Likes - ${videoInfo7.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo7.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo7.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo7.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo8.getTitle()}" href="${videoInfo8.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo8.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo8.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo8.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo8.getViewCount()}</li>
+                                <li>Likes - ${videoInfo8.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo8.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo8.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo8.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo9.getTitle()}" href="${videoInfo9.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo9.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo9.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo9.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo9.getViewCount()}</li>
+                                <li>Likes - ${videoInfo9.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo9.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo9.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo9.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo0.getTitle()}" href="${videoInfo0.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo0.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo0.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo0.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo0.getViewCount()}</li>
+                                <li>Likes - ${videoInfo0.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo0.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo0.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo0.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo11.getTitle()}" href="${videoInfo11.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo11.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo11.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo11.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo11.getViewCount()}</li>
+                                <li>Likes - ${videoInfo11.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo11.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo11.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo11.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo12.getTitle()}" href="${videoInfo12.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo12.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo12.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo12.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo12.getViewCount()}</li>
+                                <li>Likes - ${videoInfo12.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo12.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo12.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo12.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo13.getTitle()}" href="${videoInfo13.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo13.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo13.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo13.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo13.getViewCount()}</li>
+                                <li>Likes - ${videoInfo13.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo13.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo13.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo13.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo14.getTitle()}" href="${videoInfo14.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo14.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo14.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo14.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo14.getViewCount()}</li>
+                                <li>Likes - ${videoInfo14.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo14.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo14.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo14.getThumbnail()}" alt="">
+                            </li>
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo15.getTitle()}" href="${videoInfo15.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo15.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo15.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo15.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo15.getViewCount()}</li>
+                                <li>Likes - ${videoInfo15.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo15.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo15.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo15.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo16.getTitle()}" href="${videoInfo16.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo16.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo16.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo16.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo16.getViewCount()}</li>
+                                <li>Likes - ${videoInfo16.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo16.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo16.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo16.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo17.getTitle()}" href="${videoInfo17.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo17.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo17.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo17.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo17.getViewCount()}</li>
+                                <li>Likes - ${videoInfo17.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo17.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo17.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo17.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo18.getTitle()}" href="${videoInfo18.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo18.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo18.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo18.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo18.getViewCount()}</li>
+                                <li>Likes - ${videoInfo18.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo18.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo18.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo18.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo19.getTitle()}" href="${videoInfo19.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo19.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo19.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo19.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo19.getViewCount()}</li>
+                                <li>Likes - ${videoInfo19.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo19.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo19.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo19.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo20.getTitle()}" href="${videoInfo20.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo20.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo20.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo20.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo20.getViewCount()}</li>
+                                <li>Likes - ${videoInfo20.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo20.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo20.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo20.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo21.getTitle()}" href="${videoInfo21.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo21.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo21.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo21.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo21.getViewCount()}</li>
+                                <li>Likes - ${videoInfo21.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo21.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo21.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo21.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo22.getTitle()}" href="${videoInfo22.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo22.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo22.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo22.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo22.getViewCount()}</li>
+                                <li>Likes - ${videoInfo22.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo22.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo22.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo22.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo23.getTitle()}" href="${videoInfo23.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo23.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo23.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo23.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo23.getViewCount()}</li>
+                                <li>Likes - ${videoInfo23.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo23.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo23.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo3.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo24.getTitle()}" href="${videoInfo24.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo24.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo24.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo24.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo24.getViewCount()}</li>
+                                <li>Likes - ${videoInfo24.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo24.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo24.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo24.getThumbnail()}" alt="">
+                            </li>
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo25.getTitle()}" href="${videoInfo25.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo25.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo25.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo25.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo25.getViewCount()}</li>
+                                <li>Likes - ${videoInfo25.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo25.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo25.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo25.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            <!-- End Video Info -->
+                            <!-- Video Info -->
+                            <li class="item-thumbs span3">
+                                <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="${videoInfo26.getTitle()}" href="${videoInfo26.getUrl()}">
+                                <span class="overlay-img" style="text-align:center;color:black">
+                                <ul style="font-weight: bold;">
+                                <li>View % - ${videoInfo26.getViewpercent()}</li>
+                                <li>Like/Views % - ${videoInfo26.getLikeviewCount()}</li>   
+                                <li>Dislike/Like % - ${videoInfo26.getDislikelikeCount()}</li>
+                                <li>Views - ${videoInfo26.getViewCount()}</li>
+                                <li>Likes - ${videoInfo26.getLikeCount()}</li>
+                                <li>Dislikes - ${videoInfo26.getDislikeCount()}</li>
+                                <li>Comments - ${videoInfo26.getCommentCount()}</li>
+                                </ul>
+                                </span></a>
+                                <!-- Thumb Image and Description -->
+                                <img src="${videoInfo6.getThumbnail()}" alt="">
+                            </li>
+                            <!-- End Video Info -->
+                            
+                        </ul>
+                    </section>
+                    
+            	</div>
+            </div>
+        </div>
+        <!-- End Portfolio Projects -->
+    </div>
+</div>
+<!-- End Our Work Section -->
+
+<!-- Socialize -->
+<div id="social-area" class="page">
+	<div class="container">
+    	<div class="row">
+            <div class="span12">
+                <nav id="social">
+                    <ul>
+                        <li><a href="" title="Follow Me on Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a></li>
+                        <li><a href="" title="Follow Me on Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a></li>
+                        <li><a href="" title="Follow Me on Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a></li>
+                        <li><a href="" title="Follow Me on LinkedIn" target="_blank"><span class="font-icon-social-linkedin"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Socialize -->
+
+<!-- Footer -->
+<footer>
+	<p class="credits">&copy;2015  <a href="" title="">made with lots of smile :) :)</a> by CodeGeeks<a href="" title=""></a></p>
+</footer>
+<!-- End Footer -->
+
+<!-- Back To Top -->
+<a id="back-to-top" href="#">
+	<i class="font-icon-arrow-simple-up"></i>
+</a>
+<!-- End Back to Top -->
+
+
+<!-- Js -->
+<script>
+function Search(query){
+	alert(query);
+	window.location = '/yotube/searchpage?query='+query;
+	document.getElementById("search").value=query;
+}
+function searching(){
+	var query= document.getElementById("search").value;
+	alert(query);
+	window.location = '/yotube/searchpage?query='+query;
+}
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+<script src="_include/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+<script src="_include/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
+<script src="_include/js/waypoints.js"></script> <!-- WayPoints -->
+<script src="_include/js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+<script src="_include/js/jquery.isotope.js"></script> <!-- Isotope Filter -->
+<script src="_include/js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+<script src="_include/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+<script src="_include/js/jquery.tweet.js"></script> <!-- Tweet -->
+<script src="_include/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+<script src="_include/js/main.js"></script> <!-- Default JS -->
+<!-- End Js -->
+
+</body>
+</html>

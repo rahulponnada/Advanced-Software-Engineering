@@ -1,0 +1,4 @@
+$("#search").click(function(){
+	  var query = $("#search").value;
+	  window.location = "/yotube/searchpage?query="+query;
+  });

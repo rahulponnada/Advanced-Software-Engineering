@@ -1,0 +1,4 @@
+$("#search").click(function(){
+	window.location.href = "http://localhost:8080/yotube/page";
+	sleep(1000);
+});
